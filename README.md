@@ -1,10 +1,10 @@
-# Exploratory data Analysis
+# Exploratory Data Analysis (EDA) - Layoffs Dataset
 
 ## 📌 Project Overview
-This project focuses on **cleaning and preprocessing** a dataset containing information on **company layoffs**. The dataset includes details such as company names, locations, industries, total layoffs, funding raised, and more. The goal of this project is to **enhance data quality** by removing inconsistencies, handling missing values, and ensuring standardized formatting using **MySQL**.
+After performing data cleaning, this project focuses on **Exploratory Data Analysis (EDA)** to derive insights from the layoffs dataset. The dataset contains records of company layoffs, including industry, country, funding raised, and more. The objective of this project is to analyze trends and patterns in layoffs across different factors such as time, industry, and company size using **MySQL**.
 
 ## 📊 Dataset Information
-- **File Name:** `layoffs.csv`
+- **Source:** Cleaned version of `layoffs.csv`
 - **Total Entries:** 2,361 rows
 - **Columns:** 9
   - `company`: Name of the company
@@ -17,38 +17,47 @@ This project focuses on **cleaning and preprocessing** a dataset containing info
   - `country`: Country of the company
   - `funds_raised_millions`: Total funds raised in millions
 
-## 🔧 Data Cleaning Steps
-### 1️⃣ Removing Duplicates
-- Used a **Common Table Expression (CTE)** to detect and eliminate duplicate records.
+## 🔍 Key Analysis Steps
+### 1️⃣ Identifying Maximum Layoffs
+- Found the **maximum number of employees laid off** and the **highest percentage of workforce reduction** in a single instance.
 
-### 2️⃣ Standardizing Data
-- Ensured consistency in text formatting (e.g., removing extra spaces, capitalization issues).
+### 2️⃣ Companies with 100% Layoffs
+- Identified companies where **100% of employees** were laid off.
+- Analyzed which companies had the most severe layoffs in terms of absolute numbers and funding raised.
 
-### 3️⃣ Handling Missing Values
-- Identified `NULL` or blank values and addressed them appropriately.
-- Applied imputation techniques where necessary.
+### 3️⃣ Layoffs by Company
+- Aggregated **total layoffs per company** to find which firms had the highest job cuts.
 
-### 4️⃣ Dropping Irrelevant Columns
-- Removed columns that were unnecessary for analysis.
+### 4️⃣ Layoff Trends Over Time
+- Found the **earliest and latest layoffs** recorded in the dataset.
+- Grouped layoffs by **year and month** to identify layoff trends over time.
 
-### 5️⃣ Creating Staging Tables
-- Created two **staging tables** (`layoffs_staging` and `layoffs_staging2`) to preserve original data and perform transformations efficiently.
+### 5️⃣ Industry-Wise Analysis
+- Identified industries with the **highest total layoffs**.
+- Determined which industries were most affected during layoffs.
+
+### 6️⃣ Country-Wise Analysis
+- Aggregated layoffs by **country** to find which nations were most impacted.
+- Compared layoffs across different regions.
 
 ## 💻 Technologies Used
-- **MySQL** – Used for executing SQL queries and performing data cleaning operations.
-- **Jupyter Notebook / Python (Optional)** – Could be used for further exploratory data analysis (EDA).
+- **MySQL** – Used for executing EDA queries and aggregating insights.
+- **Jupyter Notebook / Python (Optional)** – Could be used for further visualization.
 
 ## 📜 SQL Queries Used
-The cleaning process was executed using **SQL queries**, including:
-- `CREATE TABLE` – To create staging tables for transformation.
-- `INSERT INTO` – To populate the staging tables.
-- `ROW_NUMBER() OVER(PARTITION BY...)` – To detect duplicate records.
-- `DELETE` – To remove unwanted rows.
+This analysis was conducted using **SQL queries**, including:
+- `MAX()` – To find the highest number of layoffs.
+- `GROUP BY` – To aggregate layoffs by company, industry, country, and time.
+- `ORDER BY` – To rank layoffs based on total numbers.
+- `WHERE` – To filter specific conditions such as **100% workforce layoffs**.
 
 ## 📌 Why This Project?
-Data cleaning is a crucial step in **data analysis and machine learning**. Unclean data can lead to inaccurate insights and faulty decision-making. By applying **systematic data cleaning techniques**, we ensure that our dataset is **reliable, consistent, and ready for further analysis**.
+EDA is a crucial step in **data science** and **decision-making**. By analyzing layoffs, we can:
+- Identify which industries are most affected.
+- Detect economic trends and corporate downsizing patterns.
+- Provide data-driven insights for workforce planning and policy-making.
 
 ## 🚀 How to Use This Repository
-1. Clone this repository to your local system.
+1. Clone this repository to your local system:
    ```bash
-   git clone https://github.com/your-username/data-cleaning-project.git
+   git clone https://github.com/your-username/data-analysis-project.git
