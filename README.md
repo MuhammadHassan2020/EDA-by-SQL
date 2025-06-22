@@ -3,6 +3,30 @@
 ## 📌 Project Overview
 After performing data cleaning, this project focuses on **Exploratory Data Analysis (EDA)** to derive insights from the layoffs dataset. The dataset contains records of company layoffs, including industry, country, funding raised, and more. The objective of this project is to analyze trends and patterns in layoffs across different factors such as time, industry, and company size using **MySQL**.
 
+## 🧠 Business Problem  
+Mass layoffs affect both the economy and individual livelihoods. During financial downturns, it's crucial to identify:  
+- Which industries and countries are most impacted  
+- What funding stages face higher risks  
+- How layoff trends evolve over time  
+
+This project aims to extract actionable insights from layoff data to support **HR strategists, policymakers, investors, and analysts** in workforce planning and economic forecasting.
+
+## 💥 Business Impact  
+- 📊 Helps businesses and governments **predict economic stress** across industries  
+- 💼 Supports **strategic hiring and downsizing** decisions for HR departments  
+- 🌍 Reveals **region-wise vulnerabilities** to help mitigate future workforce crises  
+- 💡 Offers insights to **investors and market analysts** by connecting layoffs with company funding stages and raised capital
+
+## ✅ Solution  
+This project performs SQL-based EDA to analyze:
+- 🔍 **Maximum layoffs** by company and percentage  
+- 🏢 **Companies with 100% workforce cuts**  
+- 📆 **Layoff trends over time** (year/month)  
+- 🏭 **Industry-wise impacts**  
+- 🌐 **Country-wise analysis**  
+
+All insights were derived using structured SQL queries (e.g., `GROUP BY`, `ORDER BY`, `MAX()`, `WHERE`) and optionally visualized using Python (Jupyter).
+
 ## 📊 Dataset Information
 - **Source:** Cleaned version of `layoffs.csv`
 - **Total Entries:** 2,361 rows
